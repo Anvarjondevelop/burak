@@ -41,9 +41,11 @@ loyihani oxirlariga kelib main branch ga o'tkaziladi
 
 -- Git da branch larni nazorat qilish uchun kerak buyruqlar :
 
-git branch develop deb yozsak bizga develop brachini ochib beradi
-git brach deb bizda qanday branchlar borligini tekshirsak bo'ladi
-git checkout deb branch nomini yozsak o'sha branch ga switch bo'lamiz
+git branch develop - deb yozsak bizga develop brachini ochib beradi
+git brach - deb bizda qanday branchlar borligini tekshirsak bo'ladi
+git checkout - deb branch nomini yozsak o'sha branch ga switch bo'lamiz
+git oneline - oxirgi commit ni tekshirib terminalga chiqaradi
+git reset --hard  - eng oxirgi yozgan commit holatiga qaytarib beradi o'sha commit dan keyin yozgan barcha narsa o'chadi
 
 ---------------------------------------------------------------------------------------------------------
 
@@ -75,4 +77,12 @@ process.env ga qo‘shadi
 dotenv → .env ni o‘qiydi
 config() → process.env ga joylaydi
 Node.js .env ni bilmaydi
+---------------------------------------------------------------------------------------------------------
+Mongo DB strukturasi:
+Cluster => Database => Collection => Document 
+---------------------------------------------------------------------------------------------------------
+"outDir": "./dist"
+👉 TypeScript compile qilingan JavaScript fayllarni qaysi papkaga chiqarishini belgilaydi.
+
+
 ---------------------------------------------------------------------------------------------------------
