@@ -86,3 +86,5 @@ Cluster => Database => Collection => Document
 
 
 ---------------------------------------------------------------------------------------------------------
+
+mongoose.connect() faqat string qabul qiladi.
