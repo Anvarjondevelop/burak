@@ -82,9 +82,35 @@ Mongo DB strukturasi:
 Cluster => Database => Collection => Document 
 ---------------------------------------------------------------------------------------------------------
 "outDir": "./dist"
-👉 TypeScript compile qilingan JavaScript fayllarni qaysi papkaga chiqarishini belgilaydi.
+TypeScript compile qilingan JavaScript fayllarni qaysi papkaga chiqarishini belgilaydi.
 
 
 ---------------------------------------------------------------------------------------------------------
 
 mongoose.connect() faqat string qabul qiladi.
+---------------------------------------------------------------------------------------------------------
+Express JavaScript’da yozilgan,
+@types/express esa TypeScript’ga Express qanday ishlashini tushuntirib beradi.
+---------------------------------------------------------------------------------------------------------
+BSSR — Backend Server Side Rendering
+ Sahifa serverda HTML bo‘lib tayyorlanadi, keyin brauzerga yuboriladi.
+---------------------------------------------------------------------------------------------------------
+Express — Node.js asosida qurilgan backend framework bo‘lib, 
+HTTP so‘rovlarni qabul qilish, routing va response qaytarishni osonlashtiradi.
+---------------------------------------------------------------------------------------------------------
+app.use(express.static(path.join(__dirname, "public")));
+1/ app.use(...) — middleware ulash => “Har kelayotgan request oldin shu funksiyadan o‘tsin”
+
+2 /express.static(...) — static fayllar uchun middleware
+express.static(...)
+ Bu tayyor middleware bo‘lib:
+HTML,CSS,JS,IMG,FONT kabi o‘zgarmaydigan (static) fayllarni to‘g‘ridan-to‘g‘ri brauzerga beradi.
+Backend route yozmasdan.
+
+3/ Server joylashgan papkani ol (__dirname) va uning ichidagi public papkani top (path.join)
+---------------------------------------------------------------------------------------------------------
+app.use(express.urlencoded({ extended: true })); =>  Bu middleware HTML formdan kelgan POST ma’lumotlarni req.body ichiga joylab beradi. 
+ya'ni backend tushunadigan tilga o'girib beradi
+---------------------------------------------------------------------------------------------------------
+app.use(express.json()); => frontenddan JSON ko‘rinishida kelgan ma’lumotlarni o‘qib, req.body ga solib beradi.
+---------------------------------------------------------------------------------------------------------
