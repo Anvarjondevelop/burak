@@ -1,0 +1,78 @@
+Compiled Language : Java, Golang , C , C++, C#, Rust => Compiling & run
+ Compiling language’da yozilgan kod avval to‘liq mashina tiliga o‘giriladi, 
+ shundan keyin run (ishga tushiriladi) qilinadi
+“Oldin tekshiriladi → keyin tarjima → keyin alohida run” — to‘g‘ri
+
+
+Interpreted Language: NodeJS, Python, PHP, Ruby     =>  Runnig 
+Code run vaqtida o‘qiladi
+
+--------------------------------------------------------------------------------------------------------
+
+Typescript bu NodeJs ga type tushunchasini olib kirgan
+Typescript => Javascriptni o'ziga 100% qamrab olgan ya'ni javascriptda nima ishla nima bo'lsa typescriptda ham o'sha narsalar bor
+Typescript = Javascript + Typescript o'zining elementlar va componentlar
+
+---------------------------------------------------------------------------------------------------------
+
+Reference type — bu o‘zida ma’lumotni emas, balki ma’lumot turgan joyning manzilini (reference) saqlaydigan type.
+Reference type’lar — katta va murakkab ma’lumotni nusxalamasdan tez, samarali va bir markazdan boshqarish uchun kerak.
+
+---------------------------------------------------------------------------------------------------------
+
+Interface — object’ning keyi hamda value type ini oldindan belgilovchi TypeScript vositasi
+Interface => instencega ega bo'lmaydi ular shunchaki type uchun xaizmat qiladigan soyadir
+ Interface’da instance bo‘lmaydi,
+ u faqat object’ning type va strukturasi uchun xizmat qiladi
+
+---------------------------------------------------------------------------------------------------------
+
+Har qanday Fronted yoki Backend ma'lum bir patternlar asosida quriladi
+
+Architectural pattern: MVC, DI, MVP => SUYAK
+MVC = MODEL VIEW CONTROLLER
+
+Design pattern: Middleware, Decoretar
+
+---------------------------------------------------------------------------------------------------------
+
+Develop qilish jarayonida alohida branch ochib olinib o'sha branchda develop qilinadi
+loyihani oxirlariga kelib main branch ga o'tkaziladi
+
+-- Git da branch larni nazorat qilish uchun kerak buyruqlar :
+
+git branch develop deb yozsak bizga develop brachini ochib beradi
+git brach deb bizda qanday branchlar borligini tekshirsak bo'ladi
+git checkout deb branch nomini yozsak o'sha branch ga switch bo'lamiz
+
+---------------------------------------------------------------------------------------------------------
+
+env - environment variables  — bu kod ichiga yozilmaydigan, tashqaridan beriladigan sozlamalar va maxfiy ma’lumotlar.
+---------------------------------------------------------------------------------------------------------
+
+target: ES2020 - TypeScript → qaysi JavaScript syntax bilan chiqsin? // JavaScript qaysi darajagacha (versiyagacha) kompilyatsiya qilinsin
+
+module: commonjs - TypeScript modullarni qanday modul tizimiga aylantirsin
+
+target → syntax darajasi
+module → modul tizimi
+
+TypeScript biz qanday modul uslubida yozishimizdan qat’i nazar tushunadi;
+tsconfig.json dagi sozlamalar esa faqat JavaScript’ga QANDAY compile qilinishini belgilaydi.
+---------------------------------------------------------------------------------------------------------
+tsconfig butun kompilyatsiya jarayonini boshqaradi
+
+TypeScript kompilyatori ishni boshlashi bilan tsconfig.json ni o‘qiydi.
+U faqat JS ga o‘girishda emas, balki tekshiruvning o‘zida ham tsconfig’ga tayangan holda ishlaydi.
+
+---------------------------------------------------------------------------------------------------------
+dotenv.config() chaqirilganda
+dotenv:
+.env faylni topadi (root’dan)
+ichidagi KEY=VALUE larni o‘qiydi
+process.env ga qo‘shadi
+====
+dotenv → .env ni o‘qiydi
+config() → process.env ga joylaydi
+Node.js .env ni bilmaydi
+---------------------------------------------------------------------------------------------------------
