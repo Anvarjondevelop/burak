@@ -125,3 +125,7 @@ standartlashtirilgan yo‘l bilan muloqot qilishga imkon beradigan “aqlli aloq
 Middleware — bu request va response orasida turib, so‘rovni nazorat qiladigan, 
 tozalaydigan va ruxsat beradigan oraliq mantiq qatlamidir.
 ---------------------------------------------------------------------------------------------------------
+Bu Backendni nimaga quryapmiz:
+1. SPA(Single page Application) bo'lmish Burak ni userlar uchun xizmat qiladigan React loyihamiz uchun REST API serveri sifatida ishlatamiz
+
+2.Backend loyihamizni Traditional Frontend Development ya'ni adminka lohiyamizni qurish maqsdida ham ishlatamiz
