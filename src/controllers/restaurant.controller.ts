@@ -1,6 +1,7 @@
 //controllerlar doim Object orqali hosil qilinadi
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
+import MemberService from "../models/Member.service";
 //---------------------------------------------------------------------
 const restaurantController: T = {};
 //---------------------------------------------------------------------

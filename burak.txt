@@ -114,6 +114,9 @@ ya'ni backend tushunadigan tilga o'girib beradi
 ---------------------------------------------------------------------------------------------------------
 app.use(express.json()); => frontenddan JSON ko‘rinishida kelgan ma’lumotlarni o‘qib, req.body ga solib beradi.
 ---------------------------------------------------------------------------------------------------------
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_   Router vs Controller  ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
 
 express.Router() — bu HTTP method’lar, middleware’lar va route’lar saqlanadigan mini express app bo‘lib, request kelganda mos handler’ni topib ishga tushiradi.
 ---------------------------------------------------------------------------------------------------------
@@ -128,4 +131,21 @@ tozalaydigan va ruxsat beradigan oraliq mantiq qatlamidir.
 Bu Backendni nimaga quryapmiz:
 1. SPA(Single page Application) bo'lmish Burak ni userlar uchun xizmat qiladigan React loyihamiz uchun REST API serveri sifatida ishlatamiz
 
-2.Backend loyihamizni Traditional Frontend Development ya'ni adminka lohiyamizni qurish maqsdida ham ishlatamiz
+2. BSSR : Backend Server-Side Randering 
+Backend loyihamizni Traditional Frontend Development ya'ni adminka lohiyamizni qurish maqsdida ham ishlatamiz
+
+SSR (Server-Side Rendering) —
+bu veb sahifaning HTML tarkibini brauzerda emas, balki serverda render qilish arxitekturasi.
+---------------------------------------------------------------------------------------------------------
+
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_  Member - Schema  ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+//modellar doim Class lar orqali quriladi
+//service model to'gridan-to'g'ri controller bilan ishlaydi
+//database bilan bog'liq harqanday operatsiyalarni Schema modeli orqali amalga oshiramiz
+---------------------------------------------------------------------------------------------------------
+Query — bu model tomonidan database ga yuborilgan buyruq bo‘lib, u ma’lumotni olish, 
+o‘zgartirish yoki saqlash uchun xizmat qiladi
+---------------------------------------------------------------------------------------------------------

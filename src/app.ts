@@ -1,11 +1,11 @@
 import express from "express";
 import path from "path";
-import router from "./router";
+// import router from "./router";
 import routerAdmin from "./routerAdmin";
 
 /** 1- ENTRANCE **/
 const app = express();
-console.log("__dirname :", __dirname);
+// console.log("__dirname :", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -18,6 +18,6 @@ app.set("view engine", "ejs");
 
 /** 4- ROUTERS**/
 app.use("/admin", routerAdmin); //EJS //Middleware Design Pattern
-app.use("/", router); //SPA:REACT
+// app.use("/", router); //SPA:REACT
 
 export default app; // module.exports = app // default => 1 file da 1ta bo'ladi
