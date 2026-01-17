@@ -107,10 +107,21 @@ express.static(...)
 HTML,CSS,JS,IMG,FONT kabi o‘zgarmaydigan (static) fayllarni to‘g‘ridan-to‘g‘ri brauzerga beradi.
 Backend route yozmasdan.
 
-3/ Server joylashgan papkani ol (__dirname) va uning ichidagi public papkani top (path.join)
+3/  Server joylashgan papkani ol (__dirname) va uning ichidagi public papkani top (path.join)
 ---------------------------------------------------------------------------------------------------------
 app.use(express.urlencoded({ extended: true })); =>  Bu middleware HTML formdan kelgan POST ma’lumotlarni req.body ichiga joylab beradi. 
 ya'ni backend tushunadigan tilga o'girib beradi
 ---------------------------------------------------------------------------------------------------------
 app.use(express.json()); => frontenddan JSON ko‘rinishida kelgan ma’lumotlarni o‘qib, req.body ga solib beradi.
+---------------------------------------------------------------------------------------------------------
+
+express.Router() — bu HTTP method’lar, middleware’lar va route’lar saqlanadigan mini express app bo‘lib, request kelganda mos handler’ni topib ishga tushiradi.
+---------------------------------------------------------------------------------------------------------
+export default — faylning bitta asosiy exporti, export esa nomlangan va bir nechta bo‘lishi mumkin.
+---------------------------------------------------------------------------------------------------------
+API — bu ikki mustaqil tizimni ulaydigan, ichki ishni yashiradigan va faqat ruxsat etilgan, 
+standartlashtirilgan yo‘l bilan muloqot qilishga imkon beradigan “aqlli aloqa kanali”dir.
+---------------------------------------------------------------------------------------------------------
+Middleware — bu request va response orasida turib, so‘rovni nazorat qiladigan, 
+tozalaydigan va ruxsat beradigan oraliq mantiq qatlamidir.
 ---------------------------------------------------------------------------------------------------------
