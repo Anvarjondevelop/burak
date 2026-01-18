@@ -149,3 +149,47 @@ bu veb sahifaning HTML tarkibini brauzerda emas, balki serverda render qilish ar
 Query — bu model tomonidan database ga yuborilgan buyruq bo‘lib, u ma’lumotni olish, 
 o‘zgartirish yoki saqlash uchun xizmat qiladi
 ---------------------------------------------------------------------------------------------------------
+Schema — bu MongoDB’dagi collection ichidagi hujjat (document) 
+qanday ko‘rinishda bo‘lishini belgilab beradigan qoidalar to‘plami.
+
+Ya’ni:
+
+qaysi field bo‘ladi
+qaysi biri majburiy
+type’lari (string, number, date…)
+default qiymatlar
+validation qoidalar
+
+
+Schema — qoidalar,
+Model — shu qoidalar asosida MongoDB bilan ishlaydigan obyekt.
+
+---------------   --- -- - ---- - -
+import mongoose{Schema} from "mongoose";
+
+const userSchema = new Schema(
+  {
+    username: {
+      type: String,
+      required: true
+    },
+    password: {
+      type: String,
+      required: true
+    }
+  },
+  { timestamps: true }
+);
+
+export const User1 = mongoose.model("User", userSchema);
+-------- services.ts
+
+import { User } from "../models/user.model";
+
+export const createUser = (data) => {
+  return User.create(data);
+};
+
+export const findUserByUsername = (username: string) => {
+  return User.findOne({ username });
+};

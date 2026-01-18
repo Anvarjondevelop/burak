@@ -7,7 +7,7 @@ const restaurantController: T = {};
 //---------------------------------------------------------------------
 restaurantController.goHome = (req: Request, res: Response) => {
   try {
-    res.send(" Home Page");
+    res.send("PAge");
   } catch (err) {
     console.log("Error, go Home :", err);
   }
