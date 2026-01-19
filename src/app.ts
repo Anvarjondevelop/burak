@@ -2,6 +2,10 @@ import express from "express";
 import path from "path";
 // import router from "./router";
 import routerAdmin from "./routerAdmin";
+import morgan from "morgan";
+import { MORGAN_FORMAT } from "./libs/config";
+//Morgan — bu HTTP request logger middleware
+//Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
 
 /** 1- ENTRANCE **/
 const app = express();
@@ -9,6 +13,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan(MORGAN_FORMAT));
+//app.use bu => middleware design pattern
 
 /** 2- SESSIONS**/
 
