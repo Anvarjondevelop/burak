@@ -3,7 +3,7 @@
 - Naming standards:
   function, method,variable =>  camelCase    = goHome
   class => Pascal                            = MemberServices
-  folder => kebab-kebab                      = kebab-kebab
+  folder,file => kebab-kebab                      = kebab-kebab
   css class name => snake_snake
 
 -Error handling:
