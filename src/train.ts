@@ -1,31 +1,47 @@
+/*Project Standards:
+- Logging standards
+- Naming standards:
+  function, method,variable =>  camelCase    = goHome
+  class => Pascal                            = MemberServices
+  folder => kebab-kebab                      = kebab-kebab
+  css class name => snake_snake
+
+-Error handling:
+
+
+
+
+
+ */
+
 //TASK I
 // Shunday function yozing, u parametridagi array ichida eng kop
 // takrorlangan raqamni topib qaytarsin.
 // MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4.
 
-function majorityElement(arr: number[]): number | null {
-  const count: Record<number, number> = {};
+// function majorityElement(arr: number[]): number | null {
+//   const count: Record<number, number> = {};
 
-  for (const num of arr) {
-    count[num] = (count[num] || 0) + 1;
-  }
+//   for (const num of arr) {
+//     count[num] = (count[num] || 0) + 1;
+//   }
 
-  let maxCount: number = 0;
-  let result: number | null = null;
+//   let maxCount: number = 0;
+//   let result: number | null = null;
 
-  for (const num in count) {
-    if (count[num] > maxCount) {
-      maxCount = count[num];
-      result = Number(num);
-    }
-  }
+//   for (const num in count) {
+//     if (count[num] > maxCount) {
+//       maxCount = count[num];
+//       result = Number(num);
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-// Test
-const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 5]);
-console.log(result);
+// // Test
+// const result = majorityElement([1, 2, 3, 4, 5, 4, 3, 5]);
+// console.log(result);
 
 //TASK H
 

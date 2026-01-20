@@ -193,3 +193,53 @@ export const createUser = (data) => {
 export const findUserByUsername = (username: string) => {
   return User.findOne({ username });
 };
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Lohiyamizni standartlarini quramiz  ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+Darsimiz rejasi:
+* Loyihamizni standartlarini joriy qilamiz
+* API request methodlarini xaqida gaplashamiz hamda postmannni siz bilan birga ishlatamiz
+////////////
+
+Modellar 2 xil bo'ladi:
+1- Service model
+2- schema model
+
+service modullarda asosiy biznes mantiq yoziladi va Controller uchun xizmatkor vazifasini o'taydi
+schema modul database uchun vositachi 
+////////////
+
+Morgan — bu HTTP request logger middleware
+Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
+/////////////
+🔍 Bu nima qiladi?
+
+Morgan — bu HTTP request logger middleware
+
+Saytga kelgan har bir request haqida ma’lumotni consolega chiqaradi
+
+ Qanday ma’lumotlarni log qiladi?
+
+Masalan:
+
+Qaysi method bilan keldi (GET, POST, PUT, ...)
+
+Qaysi route ga keldi (/login, /users)
+
+Status code (200, 404, 500)
+
+Javob berish vaqti
+
+IP address (ba’zi formatlarda)
+/////////////
+API REQUESTS
+    TYPE > Traditional API | Rest API | GraphQL API
+    METHOD > GET | POST
+    STRUCTURE > header | body
+
+///////////////
+Postman — bu API’ni test qilish va tekshirish uchun dastur.
+
+
+
