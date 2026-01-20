@@ -240,6 +240,22 @@ API REQUESTS
 
 ///////////////
 Postman — bu API’ni test qilish va tekshirish uchun dastur.
+//////////////
+Ma'lumotlarni backenddan chaqirish uchun bizn frontedimizdan request amalga oshiriladi
+va manashu requestlar tegishli API orqali vujudga keladi
+va manashu API bizning backed serverimizga biz talab etgan ma'lumotni yuboradi
+va bizning backed serimizdan qabul etilgan ma'lumotlar yana frontendga applicationga topshiradi
+
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Service Model ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+Darsimiz rejasi:
+*API o'zi nima va uning qanday turlari mavjud?
+*Adminka loyihasi uchun muljallangan signup APIni to'liq develop qilamiz
+///////////////
+
 
 
 

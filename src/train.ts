@@ -8,10 +8,17 @@
 
 -Error handling:
 
-
-
-
-
+ */
+/**API REQUESTS:
+ * TYPE >
+ * Eng ko'p ishlatilanadigan API :
+ * Traditional API
+ * REST API
+ * GrapgQL API
+ *
+ * METHOD > GET | POST
+ *
+ * STRUCTURE > header | body
  */
 
 //TASK I
