@@ -278,3 +278,10 @@ Lekin frontendga yuborishdan oldin bo‘sh qilinadi
 
 * Adminka loyihasining login API ni develop qilamiz
 * Passwordlarni hashing qilish mexanizmi ya'ni bcryptni o'rganamiz
+
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Passwordlarni hash qilish ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+import * as bcrypt from "bcryptjs"; //bcryptjs ichidan hamma exportlarni olib, ularni bcrypt degan obyekt ichiga joyla”

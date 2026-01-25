@@ -6,6 +6,8 @@ import MemberModel from "../schema/Member.model";
 import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/types/Errors";
 import { MemberType } from "../libs/enums/member.enum";
+import * as bcrypt from "bcryptjs"; //bcryptjs ichidan hamma exportlarni olib, ularni bcrypt degan obyekt ichiga joyla”
+import { bc } from "react-router/dist/development/instrumentation-iAqbU5Q4";
 
 class MemberService {
   private readonly memberModel;
@@ -22,6 +24,11 @@ class MemberService {
       .exec(); //findOne dan keyin hech qanday query qo'yilmasligiga singnal; //.exec() — Mongoose query’ni aniq Promise sifatida ishga tushiradi va TypeScript’da toza ishlashni ta’minlaydi.
     // console.log("exist", exist);
     if (exist) throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
+
+    // console.log("before:", input.memberPassword);
+    const salt = await bcrypt.genSalt();
+    input.memberPassword = await bcrypt.hash(input.memberPassword, salt);
+    // console.log("after:", input.memberPassword);
 
     try {
       const result = await this.memberModel.create(input);
@@ -42,8 +49,13 @@ class MemberService {
       .exec();
     if (!member) throw new Errors(HttpCode.NOT_FOUND, Message.NO_MEMBER_NICK);
 
-    const isMatch = input.memberPassword === member.memberPassword;
-    console.log("isMatch::", isMatch);
+    const isMatch = await bcrypt.compare(
+      input.memberPassword,
+      member.memberPassword
+    );
+    //const isMatch = input.memberPassword === member.memberPassword;
+
+    // console.log("isMatch::", isMatch);
     if (!isMatch) {
       throw new Errors(HttpCode.UNAUTHORIZED, Message.WRONG_PASSWORD);
     }
