@@ -1,22 +1,42 @@
+// K-TASK
+
+// Shunday function yozing, u string qabul qilsin va string ichidagi
+//  unli harflar sonini qaytarsin. MASALAN: countVowels("string") return 1.
+
+function UnliHarflar(a: string): number {
+  let count = 0;
+  const unli = "aeiou";
+
+  for (let i of a.toLowerCase()) {
+    if (unli.includes(i)) {
+      count++;
+    }
+  }
+
+  return count;
+}
+const result = UnliHarflar("Assalomu alaykum");
+console.log(result);
+
 // J-TASK
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi eng uzun sozni qaytarsin.
 // MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan".
 
-function findLongestWord(str: string): string {
-  const words: string[] = str.split(" ");
-  let longest: string = "";
+// function findLongestWord(str: string): string {
+//   const words: string[] = str.split(" ");
+//   let longest: string = "";
 
-  for (const word of words) {
-    if (word.length > longest.length) {
-      longest = word;
-    }
-  }
+//   for (const word of words) {
+//     if (word.length > longest.length) {
+//       longest = word;
+//     }
+//   }
 
-  return longest;
-}
+//   return longest;
+// }
 
-console.log(findLongestWord("I come from Bukhara"));
+// console.log(findLongestWord("I come from Bukhara"));
 
 /*Project Standards:
 - Logging standards
