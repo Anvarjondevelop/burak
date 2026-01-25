@@ -256,6 +256,25 @@ Darsimiz rejasi:
 *Adminka loyihasi uchun muljallangan signup APIni to'liq develop qilamiz
 ///////////////
 
+MVC dagi Modellar 2 xil bo'ladi :
+1 - Service model => Asosiy biznes mantiq yoziladi  Controller uchun xizmat qiladi
+2- Schema model => Database uchun vositachi vazifani bajaradi
+////////////
+
+select: false
+Database’dan ma’lumot o‘qilganda (find, findOne)
+ password field umuman kelmaydi
+----
+result.password = ""
+Password DB’dan KELIB BO‘LGAN bo‘ladi
+Lekin frontendga yuborishdan oldin bo‘sh qilinadi
 
 
 
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Member - Service Model & Bcrypt ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+* Adminka loyihasining login API ni develop qilamiz
+* Passwordlarni hashing qilish mexanizmi ya'ni bcryptni o'rganamiz
