@@ -4,6 +4,7 @@ import path from "path";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
 import { MORGAN_FORMAT } from "./libs/config";
+import router from "./router";
 //Morgan — bu HTTP request logger middleware
 //Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
 
@@ -23,7 +24,7 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 4- ROUTERS**/
-app.use("/admin", routerAdmin); //EJS //Middleware Design Pattern
-// app.use("/", router); //SPA:REACT
+app.use("/admin", routerAdmin); //SSR //EJS //Middleware Design Pattern
+app.use("/", router); //SPA:REACT
 
 export default app; // module.exports = app // default => 1 file da 1ta bo'ladi

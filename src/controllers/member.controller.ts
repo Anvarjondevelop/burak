@@ -1,34 +1,46 @@
 //controllerlar doim Object orqali hosil qilinadi
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
-//---------------------------------------------------------------------
+import { LoginInput, Member, MemberInput } from "../libs/types/member";
+import MemberService from "../models/Member.service";
+import Errors from "../libs/types/Errors";
+const memberService = new MemberService();
+//==============================================================================
 const memberController: T = {};
 
-//REACT
-//---------------------------------------------------------------------
-// memberController.goHome = (req: Request, res: Response) => {
-//   try {
-//     res.send(" Home Page");
-//   } catch (err) {
-//     console.log("Error, go Home :", err);
-//   }
-// };
-// //---------------------------------------------------------------------
-// memberController.getLogin = (req: Request, res: Response) => {
-//   try {
-//     res.send(" Login Page");
-//   } catch (err) {
-//     console.log("Error, login:", err);
-//   }
-// };
-// //---------------------------------------------------------------------
-// memberController.getSignUp = (req: Request, res: Response) => {
-//   try {
-//     res.send(" Sign up Page");
-//   } catch (err) {
-//     console.log("Error, Signup page :", err);
-//   }
-// };
-//---------------------------------------------------------------------
+memberController.signup = async (req: Request, res: Response) => {
+  try {
+    console.log("signup");
+    console.log("body::", req.body);
+    const input: MemberInput = req.body;
+
+    const result: Member = await memberService.signup(input);
+    // TODO: TOKENS AUTHENTICATION
+
+    res.json({ member: result });
+    //member — bu shunchaki JSON ichidagi nom (key),
+    //ma’lumotni o‘rab turuvchi konteyner.
+  } catch (err) {
+    console.log("Error,  signup :", err);
+    if (err instanceof Errors) res.status(err.code).json(err);
+    else res.status(Errors.standart.code).json(Errors.standart);
+    //! nimaga bu yerda code bilan chaqirildi?
+    // res.json({})
+  }
+};
+//==============================================================================
+memberController.login = async (req: Request, res: Response) => {
+  try {
+    console.log("login");
+    console.log("body::", req.body);
+    const input: LoginInput = req.body;
+    const result = await memberService.login(input);
+    // TODO: TOKENS AUTHENTICATION
+    res.json({ member: result });
+  } catch (err) {
+    console.log("Error,  login:", err);
+    res.send(err);
+  }
+};
 
 export default memberController;

@@ -25,6 +25,11 @@ class Errors extends Error {
   //code degan property bor va u faqat HttpCode enum ichidagi qiymatlarni qabul qiladi
   public message: Message;
 
+  static standart = {
+    code: HttpCode.INTERNAL_SERVER_ERROR,
+    message: Message.SOMETHING_WENT_WRONG,
+  };
+
   constructor(statusCode: HttpCode, statusMessage: Message) {
     super();
     this.code = statusCode;

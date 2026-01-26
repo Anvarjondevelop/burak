@@ -285,3 +285,83 @@ Lekin frontendga yuborishdan oldin bo‘sh qilinadi
 ---------------------------------------------------------------------------------------------------------
 
 import * as bcrypt from "bcryptjs"; //bcryptjs ichidan hamma exportlarni olib, ularni bcrypt degan obyekt ichiga joyla”
+
+dbda hashlangan passwordni ichidan saltni olib
+inputdan kelgan passwordga qo‘shib aralashtiradi
+va hashlaydi
+va natijada inputdan kelgan password ham db da saqlanayotgan password bilan bir xil ko‘rinishga keladi
+
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Web server va Authentication jarayoni ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+Brauserni 3 xil xotirasi bor : Local storage , Session storage , Cookie
+
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ SPA login va signup jarayonlari ./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+* Fronted qurishning ikki hil usuli: BSSR va SPA
+* Single Page Applicationimizning login hamda signup jarayonlarini develop qilamiz
+/////////////
+
+BSSR => Fronteddan request keladi Backenddan  tayyor HTML jo'natiladi
+SPA => Fronteddan request keladi Backend faqat Json formatida data jo'natadi 
+va shu datadan foydalanga holda Fronted o'zi virtual dom orqali HTML ni qurib oladi
+
+****************
+Fronted ni 2 xil development jarayoni bor :
+Traditional FD  => SSR (Admin)  => EJS
+Modern FD       => SPA (User)  => REACT
+///////
+
+REACT - library hisoblanadi
+Library — sen ishlatasan.
+Framework — seni ishlatadi.
+///////
+
+res.json — tashqi dunyo bilan gaplashadi,
+toJSON() — ichki dunyoni tozalaydi.
+////////////
+
+“.lean() — Mongoose’ning performance optimizatsiyasi bo‘lib,
+u document emas, raw JS object qaytaradi
+va read-only operatsiyalar uchun ishlatiladi.”
+.lean() — qulaylikdan voz kechib,
+tezlikni tanlashdir.
+//////////////
+
+Error handling bo'yicha:
+Service — HTTP’ni bilmaydi
+Controller — HTTP bilan gaplashadi
+
+Shu sababli:
+service → HttpCode bilan Error yaratadi
+controller → o‘sha Error ichidan code’ni olib response qiladi
+
+if (err instanceof Errors) res.status(err.code);
+? Nega bu yerda HttpCode emas, err.code?
+Chunki:
+controller qaysi xato kelganini bilmaydi
+u faqat kelgan error’ni o‘qiydi
+
+Service xatoni “nima bo‘ldi” deb belgilaydi,
+Controller esa uni “qanday javob beramiz” ga aylantiradi.
+////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
