@@ -1,3 +1,19 @@
+// L-TASK
+
+// Shunday function yozing, u string qabul qilsin v
+// a string ichidagi hamma sozlarni chappasiga yozib
+// va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+// MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc".
+
+function reverseSentence(str: string): string {
+  return str
+    .split(" ")
+    .map((word: string) => word.split("").reverse().join(""))
+    .join(" ");
+}
+
+reverseSentence("I like developing");
+
 // K-TASK
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi
