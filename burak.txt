@@ -351,6 +351,17 @@ Service xatoni “nima bo‘ldi” deb belgilaydi,
 Controller esa uni “qanday javob beramiz” ga aylantiradi.
 ////////////////
 
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ EJS - Admin frontend quramiz./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
+
+* Adminka loyihamizni frontend pagelarini belgilaymiz
+* Frontend css, image va javascript folder va fayllarini xosil qilamiz
+* Frontendda external packagelarni chaqiramiz va bootstrap css frameworkin ishlatamiz
+* Frontendimizda ishlatiladigan header hamda footerlarni joriy qilamiz
+
+
 
 
 
