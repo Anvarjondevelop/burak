@@ -1,12 +1,21 @@
 import express from "express";
 import path from "path";
-// import router from "./router";
+import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
-import { MORGAN_FORMAT } from "./libs/config";
-import router from "./router";
 //Morgan — bu HTTP request logger middleware
 //Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
+import { MORGAN_FORMAT } from "./libs/config";
+
+import session from "express-session";
+import ConnectMongoDB from "connect-mongodb-session";
+
+//ConnectMongoDB(session) — express-session’ga mos keladigan MongoDB Store class’ini yasab beradigan zavod (factory).
+const MongoDBStore = ConnectMongoDB(session);
+const store = new MongoDBStore({
+  uri: String(process.env.MONGO_URL),
+  collection: "sessions",
+});
 
 /** 1- ENTRANCE **/
 const app = express();
@@ -18,6 +27,18 @@ app.use(morgan(MORGAN_FORMAT));
 //app.use bu => middleware design pattern
 
 /** 2- SESSIONS**/
+
+app.use(
+  session({
+    secret: String(process.env.SESSION_SECRET), //Session ID’ni soxtalashtirib bo‘lmasligi uchun muhr bosildi
+    cookie: {
+      maxAge: 1000 * 3600 * 3, //3h |  muhr qancha vaqt amal qiladi
+    },
+    store: store, //Sessionlar RAM’da emas, MongoDB’da saqlansin | muhr ma’lumoti qayerda saqlanadi
+    resave: true, // oxirgi login vaqtidan hisobga olsinsin | muhr har safar qayta bosiladimi?
+    saveUninitialized: false, //hali ichida hech narsa bo‘lmagan sessionlarni ham bazaga saqlaydi. | bo‘sh muhr beriladimi?
+  })
+);
 
 /** 3- VIEWS**/
 app.set("views", path.join(__dirname, "views"));

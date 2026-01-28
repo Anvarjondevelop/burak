@@ -360,18 +360,60 @@ Controller esa uni “qanday javob beramiz” ga aylantiradi.
 * Frontend css, image va javascript folder va fayllarini xosil qilamiz
 * Frontendda external packagelarni chaqiramiz va bootstrap css frameworkin ishlatamiz
 * Frontendimizda ishlatiladigan header hamda footerlarni joriy qilamiz
+////////////
+SPA (Single Page Application) —
+sayt bitta HTML sahifadan iborat bo‘ladi,
+keyingi hamma sahifalar HTML emas, JavaScript orqali almashtiriladi.
 
+-Sahifa qayta yuklanmaydi
+-Faqat ichidagi kontent o‘zgaradi
 
+SPA —
+backend JSON beradi,
+frontend HTML yasaydi,
+sahifa reload bo‘lmaydi.
 
+////////////
+SSR — HTML backendda yaratiladi.
 
+Backend DB dan data oladi
+HTML quradi
+Tayyor HTML yuboradi
 
+////////////
 
+processLogin — bu async controller handler bo‘lib,
+Express uni callback sifatida chaqiradi.
 
+TCP connection ochildi degani — backend server MongoDB bilan doimiy, 
+ishonchli aloqa yo‘lini ochdi, endi bemalol ma’lumot yuborib–oladi.
 
+TCP — bu kompyuterlar o‘rtasida ma’lumotni ishonchli, tartibli va yo‘qolmasdan yuborish qoidasi.
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+./:-_./:-_./:-_./:-_./:-_./:-_ Sessions./:-_./:-_./:-_./:-_./:-_./:-_
+./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:./:
+---------------------------------------------------------------------------------------------------------
 
+* Session Authentication jarayoni develop qilamiz
+* Test maqsadida checkAuthSession APIni develop qilamiz
+* Session ishlash mexanizmini muhokama etamiz
+* Birgalikda logout APIni xosil qilamiz
 
-
-
+///////////////
+1 connect-mongodb-session external package ini install qilamiz
+2 express-session external package ini install qilamiz
+-------
+express-session — bilaguzuk yasaydi
+connect-mongodb-session — bu express-session yaratgan sessionlarni 
+MongoDB’da saqlab beradigan “ombor” (store).
+-------
+express-session — serverga foydalanuvchini “eslab turish” uchun session yaratib, boshqarib beradigan tayyor vosita.
+connect-mongodb-session — sessionlarni RAM’da emas, MongoDB’da saqlab beradigan vosita.
+-------
+new MongoDBStore() MongoDB ga real ulanadi, app.use(session) esa har requestda cookie orqali session ID ni olib, 
+MongoDB’dan sessionni o‘qiydi yoki yozadi. 
+Shu tarzda login holati server restart bo‘lsa ham saqlanib qoladi.
+--------
 
 
 
