@@ -414,6 +414,13 @@ new MongoDBStore() MongoDB ga real ulanadi, app.use(session) esa har requestda c
 MongoDB’dan sessionni o‘qiydi yoki yozadi. 
 Shu tarzda login holati server restart bo‘lsa ham saqlanib qoladi.
 --------
+Kirishda senga bilet raqami berildi → bu session ID
+Ichkarida kim ekaning hali yozilmagan
+Keyin:
+req.session.member = result;
+Bu:
+“Bilet raqami #123 egasi — Anvarjon”
+deb yozib qo‘yish bilan bir xil.
 
 
 

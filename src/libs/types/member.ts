@@ -1,5 +1,7 @@
 import { ObjectId } from "mongoose";
 import { MemberStatus, MemberType } from "../enums/member.enum";
+import { Session } from "react-router";
+import { Request } from "express";
 
 export interface Member {
   _id: ObjectId;
@@ -33,3 +35,13 @@ export interface LoginInput {
   memberNick: string;
   memberPassword: string;
 }
+
+//! Qayta ko'rib chiqish kerak
+export interface AdminRequest extends Request {
+  member: Member;
+  session: Request["session"] & {
+    member: Member;
+  };
+}
+// Bu interface — Express request’ni kengaytirib, unga login bo‘lgan member va session
+// ichidagi member borligini TypeScript’ga aniq aytish uchun ishlatiladi.
