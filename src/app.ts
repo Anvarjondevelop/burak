@@ -12,6 +12,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 
 //ConnectMongoDB(session) — express-session’ga mos keladigan MongoDB Store class’ini yasab beradigan zavod (factory).
 const MongoDBStore = ConnectMongoDB(session);
+
 const store = new MongoDBStore({
   uri: String(process.env.MONGO_URL),
   collection: "sessions",
