@@ -28,6 +28,7 @@ app.use(morgan(MORGAN_FORMAT));
 //app.use bu => middleware design pattern
 
 /** 2- SESSIONS**/
+//Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
 
 app.use(
   session({

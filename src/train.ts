@@ -1,3 +1,21 @@
+// M-TASK
+
+// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin
+// va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni
+// kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN:
+// getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}].
+
+function getSquareNumbers(arr: number[]): { number: number; square: number }[] {
+  return arr.map((num) => ({
+    number: num,
+    square: num * num,
+  }));
+}
+
+const result1 = getSquareNumbers([1, 2, 3]);
+console.log(result1);
+
 // L-TASK
 
 // Shunday function yozing, u string qabul qilsin v
@@ -5,34 +23,34 @@
 // va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
 // MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc".
 
-function reverseSentence(str: string): string {
-  return str
-    .split(" ")
-    .map((word: string) => word.split("").reverse().join(""))
-    .join(" ");
-}
+// function reverseSentence(str: string): string {
+//   return str
+//     .split(" ")
+//     .map((word: string) => word.split("").reverse().join(""))
+//     .join(" ");
+// }
 
-reverseSentence("I like developing");
+// reverseSentence("I like developing");
 
 // K-TASK
 
 // Shunday function yozing, u string qabul qilsin va string ichidagi
 //  unli harflar sonini qaytarsin. MASALAN: countVowels("string") return 1.
 
-function UnliHarflar(a: string): number {
-  let count = 0;
-  const unli = "aeiou";
+// function UnliHarflar(a: string): number {
+//   let count = 0;
+//   const unli = "aeiou";
 
-  for (let i of a.toLowerCase()) {
-    if (unli.includes(i)) {
-      count++;
-    }
-  }
+//   for (let i of a.toLowerCase()) {
+//     if (unli.includes(i)) {
+//       count++;
+//     }
+//   }
 
-  return count;
-}
-const result = UnliHarflar("Assalomu alaykum");
-console.log(result);
+//   return count;
+// }
+// const result = UnliHarflar("Assalomu alaykum");
+// console.log(result);
 
 // J-TASK
 
