@@ -95,6 +95,12 @@ console.log(result1);
  * STRUCTURE > header | body
  */
 
+/* Validation:
+ Fronted validation
+ Backend validation
+ Database validation
+ */
+
 //TASK I
 // Shunday function yozing, u parametridagi array ichida eng kop
 // takrorlangan raqamni topib qaytarsin.
