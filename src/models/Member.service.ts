@@ -7,7 +7,6 @@ import { LoginInput, Member, MemberInput } from "../libs/types/member";
 import Errors, { HttpCode, Message } from "../libs/types/Errors";
 import { MemberType } from "../libs/enums/member.enum";
 import * as bcrypt from "bcryptjs"; //bcryptjs ichidan hamma exportlarni olib, ularni bcrypt degan obyekt ichiga joyla”
-import { bc } from "react-router/dist/development/instrumentation-iAqbU5Q4";
 
 class MemberService {
   private readonly memberModel;
