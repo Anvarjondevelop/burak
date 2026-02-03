@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 import ProductService from "../models/Product.service";
 import { AdminRequest } from "../libs/types/member";
 import { ProductInput } from "../libs/types/product";
+import { compareSync } from "bcryptjs";
 
 const productService = new ProductService();
 
@@ -16,7 +17,9 @@ const productController: T = {};
 productController.getAllProducts = async (req: Request, res: Response) => {
   try {
     console.log("getAllProducts");
-    res.render("products");
+    const data = await productService.getAllProducts();
+    console.log(data);
+    res.render("products", { products: data });
   } catch (err) {
     console.log("Error,  signup :", err);
     if (err instanceof Errors) res.status(err.code).json(err);
