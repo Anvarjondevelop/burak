@@ -42,11 +42,22 @@ app.use(
     saveUninitialized: false, //hali ichida hech narsa bo‘lmagan sessionlarni ham bazaga saqlaydi. | bo‘sh muhr beriladimi?
   })
 );
+
 app.use(function (req, res, next) {
   const sessionInstance = req.session as T;
-  res.locals.member = sessionInstance.member;
+  res.locals.member = sessionInstance.member; // req.session.member // EJS da HTML qurayotganda sessionni ichidagi member ni datalaridan foydalan
   next();
 });
+//nima uchun locals bor ? => Serverdan template (EJS) ga ma’lumot uzatish uchun => Data bir joydan kelishi kerak
+// locals shunchaki takrorlanishni yo'q qilish uchun kerak
+//ya'ni render()ni ichida "filename"yozsak , "res.locals" avtomatik paydo bo'ladi va uni ichi bo'sh bo'ladi biz shuni session ni ichidagi member objecti bilan to'ldiryapmiz agar uni yozmasak takrro code ko'payadi
+//Request → locals to‘ldirildi → render → yo‘q bo‘ldi
+
+//res.locals faqat res.render() orqali render qilinadigan template engine lar uchun avtomatik ishlaydi.
+
+// res.locals — Express yaratib beradigan oddiy object
+// member — sen qo‘shgan property
+// EJS res.locals ni avtomatik ko‘radi
 
 /** 3- VIEWS**/
 app.set("views", path.join(__dirname, "views"));

@@ -16,7 +16,7 @@ productController.getAllProducts = async (req: Request, res: Response) => {
     console.log("Error,  signup :", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standart.code).json(Errors.standart);
-    //! nimaga bu yerda code bilan chaqirildi?
+
     // res.json({})`
   }
 };
@@ -29,7 +29,7 @@ productController.createNewProduct = async (req: Request, res: Response) => {
     console.log("Error,  createNewProduct :", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standart.code).json(Errors.standart);
-    //! nimaga bu yerda code bilan chaqirildi?
+
     // res.json({})`
   }
 };
@@ -40,7 +40,7 @@ productController.updateChosenProduct = async (req: Request, res: Response) => {
     console.log("Error,  updateChosenProduct :", err);
     if (err instanceof Errors) res.status(err.code).json(err);
     else res.status(Errors.standart.code).json(Errors.standart);
-    //! nimaga bu yerda code bilan chaqirildi?
+
     // res.json({})`
   }
 };
