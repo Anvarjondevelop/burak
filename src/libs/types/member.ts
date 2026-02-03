@@ -42,6 +42,8 @@ export interface AdminRequest extends Request {
   session: Request["session"] & {
     member: Member;
   };
+  file: Express.Multer.File;
+  files: Express.Multer.File[];
 }
 // Bu interface — Express request’ni kengaytirib, unga login bo‘lgan member va session
 // ichidagi member borligini TypeScript’ga aniq aytish uchun ishlatiladi.
