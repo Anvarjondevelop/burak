@@ -36,6 +36,18 @@ export interface LoginInput {
   memberPassword: string;
 }
 
+export interface MemberUpdateInput {
+  // Fronteddan kelgan ma'lumotlar uchun qolib
+  _id: ObjectId;
+  memberStatus?: MemberStatus;
+  memberNick?: string;
+  memberPhone?: string;
+  memberPassword?: string;
+  memberAddress?: string;
+  memberDesc?: string;
+  memberImage?: string;
+}
+
 //! Qayta ko'rib chiqish kerak
 export interface AdminRequest extends Request {
   member: Member;
