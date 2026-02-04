@@ -31,6 +31,8 @@ class MemberService {
       throw new Errors(HttpCode.BAD_REQUEST, Message.USED_NICK_PHONE);
     }
   }
+  //---------------------------------------------------------------------
+
   public async login(input: LoginInput): Promise<Member> {
     // TODO: Consider member status later
     //nimaga promise da Member qaytaryapdi?
@@ -83,6 +85,8 @@ class MemberService {
       throw new Errors(HttpCode.BAD_REQUEST, Message.CREATE_FAILED);
     }
   }
+  //---------------------------------------------------------------------
+
   public async processLogin(input: LoginInput): Promise<Member> {
     //nimaga promise da Member qaytaryapdi?
     const member = await this.memberModel
@@ -108,6 +112,16 @@ class MemberService {
 
     console.log("result::", result);
     console.log("member:", member);
+    return result;
+  }
+  //---------------------------------------------------------------------
+
+  public async getUsers(): Promise<Member[]> {
+    const result = await this.memberModel
+      .find({ memberType: MemberType.USER })
+      .exec();
+    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
     return result;
   }
 }
