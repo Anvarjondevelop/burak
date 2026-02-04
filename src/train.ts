@@ -1,20 +1,36 @@
+// P-TASK
+
+// Shunday function yozing, u object qabul qilsin va arrayni object
+// arrayga otkazib arrayni qaytarsin.
+//  MASALAN: objectToArray({a: 10, b: 20}) return [["a", 10], ["b", 20]].
+
+function objectToArray<T extends Record<string, any>>(
+  obj: T
+): [keyof T, T[keyof T]][] {
+  return Object.entries(obj) as [keyof T, T[keyof T]][];
+}
+
+const result = objectToArray({ a: 10, b: 20 });
+
+console.log(result);
+
 //O-TASK
 
 //Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin. MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45.
 
-function calculateSumOfNumbers(arr) {
-  let sum = 0;
+// function calculateSumOfNumbers(arr) {
+//   let sum = 0;
 
-  for (const item of arr) {
-    if (typeof item === "number") {
-      sum += item;
-    }
-  }
+//   for (const item of arr) {
+//     if (typeof item === "number") {
+//       sum += item;
+//     }
+//   }
 
-  return sum;
-}
+//   return sum;
+// }
 
-calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
+// calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]);
 // natija: 45
 
 // N-TASK
