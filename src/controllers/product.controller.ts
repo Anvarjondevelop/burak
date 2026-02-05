@@ -5,7 +5,6 @@ import { Request, Response } from "express";
 import ProductService from "../models/Product.service";
 import { AdminRequest } from "../libs/types/member";
 import { ProductInput } from "../libs/types/product";
-import { compareSync } from "bcryptjs";
 
 const productService = new ProductService();
 
@@ -49,14 +48,20 @@ productController.createNewProduct = async (
 
     // console.log("data:", data);
     res.send(
-      `<script> alert ("Successful creation!"}"); window.location.replace('admin/product/all')</script>`
+      `<script>
+     alert("Successful creation!");
+     window.location.replace('/admin/product/all');
+   </script>`
     );
   } catch (err) {
     console.log("Error,  createNewProduct :", err);
     const message =
       err instanceof Errors ? err.message : Message.SOMETHING_WENT_WRONG;
     res.send(
-      `<script> alert ("${message}"}"); window.location.replace('admin/product/all')</script>`
+      `<script>
+     alert("${message}");
+     window.location.replace('/admin/product/all');
+   </script>`
     );
     // res.json({})`
   }
