@@ -1,18 +1,31 @@
+// Q-TASK
+
+// Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
+// ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin. MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true;
+// hasProperty({name: "BMW", model: "M3"}, "year") return false.
+function hasProperty(obj: Record<string, unknown>, key: string): boolean {
+  return typeof obj[key] !== "undefined";
+}
+const hasProperty1 = hasProperty({ name: "BMW", model: "M3" }, "model");
+console.log(hasProperty1);
+const hasProperty2 = hasProperty({ name: "BMW", model: "M3" }, "year");
+console.log(hasProperty2);
+
 // P-TASK
 
 // Shunday function yozing, u object qabul qilsin va arrayni object
 // arrayga otkazib arrayni qaytarsin.
 //  MASALAN: objectToArray({a: 10, b: 20}) return [["a", 10], ["b", 20]].
 
-function objectToArray<T extends Record<string, any>>(
-  obj: T
-): [keyof T, T[keyof T]][] {
-  return Object.entries(obj) as [keyof T, T[keyof T]][];
-}
+// function objectToArray<T extends Record<string, any>>(
+//   obj: T
+// ): [keyof T, T[keyof T]][] {
+//   return Object.entries(obj) as [keyof T, T[keyof T]][];
+// }
 
-const result = objectToArray({ a: 10, b: 20 });
+// const result = objectToArray({ a: 10, b: 20 });
 
-console.log(result);
+// console.log(result);
 
 //O-TASK
 
@@ -136,6 +149,7 @@ console.log(result);
 /**API REQUESTS:
  * TYPE >
  * Eng ko'p ishlatilanadigan API :
+ *
  * Traditional API
  * REST API
  * GrapgQL API
