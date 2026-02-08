@@ -136,6 +136,9 @@ class MemberService {
     input._id = shapeIntoMongooseObjectId(input._id);
     const result = await this.memberModel
       .findByIdAndUpdate({ _id: input._id }, input, { new: true })
+      //1-qaysi hujjatni topamiz?
+      //2-nimani yangilaymiz?
+      //3-yangilangan documentni qaytaradi
       .exec();
     if (!result) throw new Errors(HttpCode.NOT_MODIFIED, Message.UPDATE_FAILED);
 

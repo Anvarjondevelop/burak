@@ -31,6 +31,9 @@ app.use(morgan(MORGAN_FORMAT));
 /** 2- SESSIONS**/
 //Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
 
+//(1) req + session => requestimizga session ni boyitib beradi
+//(2) Cookie+SID => fronteddan kelayotgan cookiedagi SID(session id) ma'lumotni Dbdan tekshiradi
+
 app.use(
   session({
     secret: String(process.env.SESSION_SECRET), //Session ID’ni soxtalashtirib bo‘lmasligi uchun muhr bosildi
@@ -50,7 +53,7 @@ app.use(function (req, res, next) {
 });
 //nima uchun locals bor ? => Serverdan template (EJS) ga ma’lumot uzatish uchun => Data bir joydan kelishi kerak
 // locals shunchaki takrorlanishni yo'q qilish uchun kerak
-//ya'ni render()ni ichida "filename"yozsak , "res.locals" avtomatik paydo bo'ladi va uni ichi bo'sh bo'ladi biz shuni session ni ichidagi member objecti bilan to'ldiryapmiz agar uni yozmasak takrro code ko'payadi
+//ya'ni render()ni ichida "filename"yozsak , "res.locals" avtomatik paydo bo'ladi va uni ichi bo'sh bo'ladi biz shuni session ni ichidagi member objecti bilan to'ldiryapmiz agar uni yozmasak takror code ko'payadi
 //Request → locals to‘ldirildi → render → yo‘q bo‘ldi
 
 //res.locals faqat res.render() orqali render qilinadigan template engine lar uchun avtomatik ishlaydi.
