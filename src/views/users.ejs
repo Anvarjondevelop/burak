@@ -61,15 +61,18 @@
               </tr>
             </thead>
             <!--  LOOP PRODUCTS: START  -->
+            <% users.map((user, key) => { %>
             <tbody style="background: white">
-              <% users.forEach((user, key) => { %>
               <tr>
                 <td><%= key + 1 %></td>
                 <td><%= user.memberNick %></td>
                 <td><%= user.memberPhone %></td>
 
                 <td style="width: 13%">
-                  <select class="spec-select member-status">
+                  <select
+                    class="spec-select member-status"
+                    id="<%= user._id %>"
+                  >
                     <% if (user.memberStatus === 'ACTIVE') { %>
                     <option value="ACTIVE" selected>ACTIVE</option>
                     <% } else { %>
@@ -86,8 +89,8 @@
                   </select>
                 </td>
               </tr>
-              <% }) %>
             </tbody>
+            <% }) %>
             <!--  LOOP PRODUCTS: END  -->
           </table>
         </div>
