@@ -1,3 +1,5 @@
+const { cacheSignal } = require("react");
+
 console.log("Products frontend javascript file");
 
 $(function () {
@@ -18,6 +20,26 @@ $(function () {
   $("#cancel-btn").on("click", () => {
     $(".dish-container").slideToggle(100);
     $("#process-btn").css("display", "flex");
+  });
+  $(".new-product-status").on("change", async function (e) {
+    const id = e.target.id;
+    const productStatus = $(`#${id}.new-product-status`).val();
+    console.log("id:", id);
+    console.log("productStatus:", productStatus);
+    try {
+      const response = await axios.post(`/admin/product/${id}`, {
+        productStatus: productStatus,
+      });
+      console.log("responce", response);
+      const result = response.data;
+      if (result.data) {
+        console.log("Product Updated!");
+        $(".new-product-status").blur();
+      } else alert("Product Update failed");
+    } catch (err) {
+      console.log(err);
+      alert("Product Update failed");
+    }
   });
 });
 
