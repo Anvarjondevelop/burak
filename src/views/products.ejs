@@ -45,24 +45,41 @@
             </thead>
             <!--  LOOP PRODUCTS: START  -->
             <tbody style="background-color: white">
-              <% products.forEach((product, index) => { %>
+              <% products.map((product, index) => { %>
               <tr>
                 <td><%= index + 1 %></td>
                 <td><%= product.productName %></td>
                 <td><%= product.productCollection %></td>
-                <td><%= product.productSize %></td>
+                <td>
+                  <%= product.productCollection === 'DRINK' ?
+                  product.productVolume : product.productSize %>
+                </td>
                 <td><%= product.productPrice %></td>
                 <td><%= product.productLeftCount %></td>
                 <td>
-                  <select class="spec-select new-product-status">
+                  <select
+                    class="spec-select new-product-status"
+                    id="<%= product._id %>"
+                  >
+                    <% if (product.productStatus === 'PAUSE') { %>
                     <option value="PAUSE" selected>PAUSE</option>
+                    <% } else { %>
+                    <option value="PAUSE">PAUSE</option>
+                    <% } %> <% if (product.productStatus === 'PROCESS') { %>
+                    <option value="PROCESS" selected>PROCESS</option>
+                    <% } else { %>
                     <option value="PROCESS">PROCESS</option>
+                    <% } %> <% if (product.productStatus === 'DELETE') { %>
+                    <option value="DELETE" selected>DELETE</option>
+                    <% } else { %>
                     <option value="DELETE">DELETE</option>
+                    <% } %>
                   </select>
                 </td>
               </tr>
               <% }) %>
             </tbody>
+
             <!--  LOOP PRODUCTS: END  -->
           </table>
           <div
