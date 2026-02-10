@@ -1,5 +1,3 @@
-const { cacheSignal } = require("react");
-
 console.log("Products frontend javascript file");
 
 $(function () {
