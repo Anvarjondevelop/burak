@@ -1,15 +1,32 @@
+// R-TASK
+
+// Shunday function yozing, u string parametrga ega bolsin.
+// String "1+2" holatda pass qilinganda string ichidagi sonlar yigindisini
+// number holatda qaytarsin.
+//  MASALAN: calculate("1+3") return 4.
+
+function calculate(expression: string): number {
+  const parts = expression.split("+");
+  const a = Number(parts[0]);
+  const b = Number(parts[1]);
+
+  return a + b;
+}
+
+calculate("1+2");
+
 // Q-TASK
 
 // Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object,
 // ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin. MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true;
 // hasProperty({name: "BMW", model: "M3"}, "year") return false.
-function hasProperty(obj: Record<string, unknown>, key: string): boolean {
-  return typeof obj[key] !== "undefined";
-}
-const hasProperty1 = hasProperty({ name: "BMW", model: "M3" }, "model");
-console.log(hasProperty1);
-const hasProperty2 = hasProperty({ name: "BMW", model: "M3" }, "year");
-console.log(hasProperty2);
+// function hasProperty(obj: Record<string, unknown>, key: string): boolean {
+//   return typeof obj[key] !== "undefined";
+// }
+// const hasProperty1 = hasProperty({ name: "BMW", model: "M3" }, "model");
+// console.log(hasProperty1);
+// const hasProperty2 = hasProperty({ name: "BMW", model: "M3" }, "year");
+// console.log(hasProperty2);
 
 // P-TASK
 
