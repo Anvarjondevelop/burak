@@ -15,12 +15,12 @@ const memeberSchema = new Schema(
     },
     memberNick: {
       type: String,
-      index: { unique: true }, //faqat mavjud (bor) qiymatlar indexga kiradinull yoki yo‘q bo‘lgan field indexlanmaydi
+      index: { unique: true },
       required: true,
     },
     memberPhone: {
       type: String,
-      index: { unique: true, sparse: true },
+      index: { unique: true, sparse: true }, //faqat mavjud (bor) qiymatlar indexga kiradi null yoki yo‘q bo‘lgan field indexlanmaydi
       required: true,
     },
     memberPassword: {

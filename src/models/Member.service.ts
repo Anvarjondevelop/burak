@@ -15,11 +15,13 @@ import * as bcrypt from "bcryptjs"; //bcryptjs ichidan hamma exportlarni olib, u
 import { shapeIntoMongooseObjectId } from "../libs/config";
 
 class MemberService {
-  private readonly memberModel;
+  private readonly memberModel; //bu o‘zgaruvchi class ichidagi doimiy model.
 
   constructor() {
-    this.memberModel = MemberModel;
+    this.memberModel = MemberModel; //Constructor — class yaratilganda avtomatik ishlaydi.
   }
+  //Constructor ichida MemberModel ni class property sifatida biriktirib, service ichida database bilan ishlash uchun foydalanish imkonini yaratadi.
+
   /* SPA */
 
   public async signup(input: MemberInput): Promise<Member> {
@@ -30,6 +32,7 @@ class MemberService {
 
     try {
       const result = await this.memberModel.create(input);
+      console.log("RESULT", result);
       result.memberPassword = "";
       return result.toJSON();
     } catch (err) {
@@ -103,8 +106,8 @@ class MemberService {
     //nimaga promise da Member qaytaryapdi?
     const member = await this.memberModel
       .findOne(
-        { memberNick: input.memberNick },
-        { memberNick: 1, memberPassword: 1 }
+        { memberNick: input.memberNick }, // Filtering
+        { memberNick: 1, memberPassword: 1 } // Projection
       ) //member schema modeli orqali DBdan ma'lumot qidiryapdi
       //password to'g'ri kiritilganmi yo'qmi bilish uchun uni majburiy chaqirib olish kerak
       .exec();

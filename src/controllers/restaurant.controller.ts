@@ -72,7 +72,6 @@ restaurantController.processSignup = async (
     res.send(
       `<script> alert ("${message}"); window.location.replace('/admin/signup')</script>`
     );
-    res.send(err);
   }
 };
 

@@ -23,8 +23,8 @@ const store = new MongoDBStore({
 const app = express();
 // console.log("__dirname :", __dirname);
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: true })); //Traditional API support
+app.use(express.json()); //Rest API support
 app.use(morgan(MORGAN_FORMAT));
 //app.use bu => middleware design pattern
 
@@ -67,7 +67,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 /** 4- ROUTERS**/
-app.use("/admin", routerAdmin); //SSR //EJS //Middleware Design Pattern
-app.use("/", router); //SPA:REACT
+app.use("/admin", routerAdmin); //SSR //EJS //Middleware Design Pattern //MPA => SSR
+
+app.use("/", router); //SPA:REACT // SPA => CSR
 
 export default app; // module.exports = app // default => 1 file da 1ta bo'ladi

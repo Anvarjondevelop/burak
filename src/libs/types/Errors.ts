@@ -32,11 +32,12 @@ class Errors extends Error {
     message: Message.SOMETHING_WENT_WRONG,
   };
 
-  constructor(statusCode: HttpCode, statusMessage: Message) {
+  constructor(statusCode: any, statusMessage: Message) {
     super();
     this.code = statusCode;
     this.message = statusMessage;
   }
+  // ! class larni boshqatdan o'rganish
 }
 
 export default Errors;

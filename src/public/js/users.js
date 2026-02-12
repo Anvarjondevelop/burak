@@ -2,6 +2,7 @@ console.log("Users frontend javascript file");
 //document-ready
 $(function () {
   $(".member-status").on("change", function (e) {
+    console.log("e...", e);
     const id = e.target.id;
     console.log("ID", id);
 

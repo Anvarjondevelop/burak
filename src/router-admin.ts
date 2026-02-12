@@ -41,7 +41,7 @@ routerAdmin.post(
 /** User */
 routerAdmin.get(
   "/user/all",
-  restaurantController.verifyRestaurant,
+  restaurantController.verifyRestaurant, //AUTHORIZATION MIDDLEWARE
   restaurantController.getUsers
 );
 

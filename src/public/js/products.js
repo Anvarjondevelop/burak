@@ -75,10 +75,12 @@ function previewFileHandler(input, order) {
   } else {
     if (file) {
       const reader = new FileReader();
+      reader.readAsDataURL(file);
+      console.log("reader", reader);
       reader.onload = function () {
+        // onload fileni o'qib bo'lganingda degani
         $(`#image-section-${order}`).attr("src", reader.result);
       };
-      reader.readAsDataURL(file);
     }
   }
 }

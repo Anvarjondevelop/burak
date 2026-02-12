@@ -1,3 +1,22 @@
+// S-TASK
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin
+// va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
+// MASALAN: missingNumber([3, 0, 1]) return 2.
+
+function missingNumber(nums: number[]): number {
+  const n: number = nums.length;
+
+  const expectedSum: number = (n * (n + 1)) / 2;
+  const actualSum: number = nums.reduce(
+    (sum: number, num: number) => sum + num,
+    0
+  );
+
+  return expectedSum - actualSum;
+}
+
+console.log(missingNumber([3, 0, 1]));
 // R-TASK
 
 // Shunday function yozing, u string parametrga ega bolsin.
@@ -5,15 +24,15 @@
 // number holatda qaytarsin.
 //  MASALAN: calculate("1+3") return 4.
 
-function calculate(expression: string): number {
-  const parts = expression.split("+");
-  const a = Number(parts[0]);
-  const b = Number(parts[1]);
+// function calculate(expression: string): number {
+//   const parts = expression.split("+");
+//   const a = Number(parts[0]);
+//   const b = Number(parts[1]);
 
-  return a + b;
-}
+//   return a + b;
+// }
 
-calculate("1+2");
+// calculate("1+2");
 
 // Q-TASK
 
