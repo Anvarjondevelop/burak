@@ -1,6 +1,14 @@
 console.log("Products frontend javascript file");
 
 $(function () {
+  $("#process-btn").on("click", () => {
+    $(".dish-container").slideToggle(500);
+    $("#process-btn").css("display", "none");
+  });
+  $("#cancel-btn").on("click", () => {
+    $(".dish-container").slideToggle(100);
+    $("#process-btn").css("display", "flex");
+  });
   $(".product-collection").on("change", () => {
     const selectedValue = $(".product-collection").val();
     if (selectedValue === "DRINK") {
@@ -11,21 +19,13 @@ $(function () {
       $("#product-collection").show();
     }
   });
-  $("#process-btn").on("click", () => {
-    $(".dish-container").slideToggle(500);
-    $("#process-btn").css("display", "none");
-  });
-  $("#cancel-btn").on("click", () => {
-    $(".dish-container").slideToggle(100);
-    $("#process-btn").css("display", "flex");
-  });
   $(".new-product-status").on("change", async function (e) {
     const id = e.target.id;
     const productStatus = $(`#${id}.new-product-status`).val();
     console.log("id:", id);
     console.log("productStatus:", productStatus);
     try {
-      const response = await axios.post(`/admin/product/${id}`, {
+      const response = await axios.post(`/admin/product/${}id`, {
         productStatus: productStatus,
       });
       console.log("responce", response);

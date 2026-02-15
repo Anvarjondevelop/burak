@@ -1,4 +1,3 @@
-class ProductService {}
 import mongoose, { Schema } from "mongoose";
 import {
   ProductCollection,

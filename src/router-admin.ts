@@ -7,7 +7,7 @@ import makeUploader from "./libs/utils/uploader";
 /** Restaurant */
 routerAdmin.get("/", restaurantController.goHome); // routerAdmin kirib kelayotgan requeslarning endpoint iga raqab controllerga yuboradi
 routerAdmin
-  .get("/login", restaurantController.getLogin)
+  .get("/login", restaurantController.getLogin) // TODO agar login bo'lgan bo'lsa qayta login pagega kiraolmasligi kerak
   .post("/login", restaurantController.processLogin);
 routerAdmin
   .get("/signup", restaurantController.getSignUp)

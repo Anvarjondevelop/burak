@@ -1,22 +1,45 @@
+// T-TASK
+
+// Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin va ikkala arraydagi
+// sonlarni tartiblab bir arrayda qaytarsin.
+// MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]) return [0,3,4,4,6,30,31].
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  return [...arr1, ...arr2].sort((a, b) => a - b);
+}
+
+// testlar
+const result1 = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+console.log(result1); // [0, 3, 4, 4, 6, 30, 31]
+
+const result2 = mergeSortedArrays([1, 2, 5], [0, 3, 7]);
+console.log(result2); // [0, 1, 2, 3, 5, 7]
+
+const result3 = mergeSortedArrays([], [2, 4, 6]);
+console.log(result3); // [2, 4, 6]
+
+const result4 = mergeSortedArrays([1, 2, 3], []);
+console.log(result4); // [1, 2, 3]
+
 // S-TASK
 
 // Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin
 // va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin.
 // MASALAN: missingNumber([3, 0, 1]) return 2.
 
-function missingNumber(nums: number[]): number {
-  const n: number = nums.length;
+// function missingNumber(nums: number[]): number {
+//   const n: number = nums.length;
 
-  const expectedSum: number = (n * (n + 1)) / 2;
-  const actualSum: number = nums.reduce(
-    (sum: number, num: number) => sum + num,
-    0
-  );
+//   const expectedSum: number = (n * (n + 1)) / 2;
+//   const actualSum: number = nums.reduce(
+//     (sum: number, num: number) => sum + num,
+//     0
+//   );
 
-  return expectedSum - actualSum;
-}
+//   return expectedSum - actualSum;
+// }
 
-console.log(missingNumber([3, 0, 1]));
+// console.log(missingNumber([3, 0, 1]));
 // R-TASK
 
 // Shunday function yozing, u string parametrga ega bolsin.

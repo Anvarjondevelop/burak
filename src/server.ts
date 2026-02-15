@@ -17,3 +17,5 @@ mongoose
   .catch((err) => {
     console.log("ERROR on connection Mongodb", err);
   });
+
+// todo makeuploader mantiqini ko'rish kerak 14.02.26 kuni

@@ -88,9 +88,9 @@ restaurantController.processLogin = async (
     const result = await memberService.processLogin(input);
     // TODO: SESSIONS AUTHENTICATION
     req.session.member = result;
-    req.session.save(function () {});
-
-    res.redirect("/admin/product/all");
+    req.session.save(function () {
+      res.redirect("/admin/product/all");
+    });
   } catch (err) {
     console.log("Error,  processLogin :", err);
     const message =

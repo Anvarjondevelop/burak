@@ -6,7 +6,8 @@ import morgan from "morgan";
 //Morgan — bu HTTP request logger middleware
 //Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
 import { MORGAN_FORMAT } from "./libs/config";
-
+//express-session — bu Node.js kutubxonasi.
+//U server tomonda session yaratadi va boshqaradi.
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
@@ -36,12 +37,13 @@ app.use(morgan(MORGAN_FORMAT));
 
 app.use(
   session({
-    secret: String(process.env.SESSION_SECRET), //Session ID’ni soxtalashtirib bo‘lmasligi uchun muhr bosildi
+    secret: String(process.env.SESSION_SECRET), // session id yo'q bo'lsa yaratadi bor bo'lsa tekshiradi //Session ID’ni soxtalashtirib bo‘lmasligi uchun muhr bosildi //2 Server cookie ichidagi session ID ni tekshiradi.
     cookie: {
       maxAge: 1000 * 3600 * 3, //3h |  muhr qancha vaqt amal qiladi
     },
-    store: store, //Sessionlar RAM’da emas, MongoDB’da saqlansin | muhr ma’lumoti qayerda saqlanadi
-    resave: true, // oxirgi login vaqtidan hisobga olsinsin | muhr har safar qayta bosiladimi?
+
+    store: store, //Sessionlar RAM’da emas, MongoDB’da saqlansin | muhr ma’lumoti qayerda saqlanadi //2Sessionlar qayerda saqlanishini belgilaydi.
+    rolling: true, // oxirgi login vaqtidan hisobga olsinsin | muhr har safar qayta bosiladimi?
     saveUninitialized: false, //hali ichida hech narsa bo‘lmagan sessionlarni ham bazaga saqlaydi. | bo‘sh muhr beriladimi?
   })
 );

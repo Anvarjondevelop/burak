@@ -17,7 +17,7 @@ memberController.signup = async (req: Request, res: Response) => {
     const result: Member = await memberService.signup(input);
     // TODO: TOKENS AUTHENTICATION
 
-    res.json({ member: result });
+    res.json({ member: result }); //frontendga JSON response qilib yuborish
     //member — bu shunchaki JSON ichidagi nom (key),
     //ma’lumotni o‘rab turuvchi konteyner.
   } catch (err) {
