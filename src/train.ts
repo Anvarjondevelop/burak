@@ -8,8 +8,8 @@ function sumOdds(n: number): number {
   return Math.floor(n / 2);
 }
 
-console.log(sumOdds(9)); // 4
-console.log(sumOdds(11)); // 5
+console.log(sumOdds(9));
+console.log(sumOdds(11));
 
 // T-TASK
 
