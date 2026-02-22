@@ -1,24 +1,41 @@
+// W-TASK
+//Shunday function yozing, uni array va number parametrlari bolsin.
+// Function arrayni numberda berilgan uzunlikda kesib bolaklarga ajratilgan array holatida qaytarsin.
+// MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9], [10]].
+
+function chunkArray(arr: number[], size: number): number[][] {
+  const result: number[][] = [];
+
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
+  }
+
+  return result;
+}
+
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
 // V-TASK
 
 // Shunday function yozing, uni string parametri bolsin va stringdagi harf va
 // u harf necha marta takrorlangani sonidan tashkil topgan object qaytarsin.
 // MASALAN: countChars("hello") return {h: 1, e: 1, l: 2, o: 1}.
 
-function countChars(str: string): Record<string, number> {
-  const result: Record<string, number> = {};
+// function countChars(str: string): Record<string, number> {
+//   const result: Record<string, number> = {};
 
-  for (const char of str) {
-    if (result[char]) {
-      result[char]++;
-    } else {
-      result[char] = 1;
-    }
-  }
+//   for (const char of str) {
+//     if (result[char]) {
+//       result[char]++;
+//     } else {
+//       result[char] = 1;
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(countChars("Anvarjon"));
+// console.log(countChars("Anvarjon"));
 
 // U-TASK
 
