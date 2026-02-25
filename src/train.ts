@@ -4,31 +4,31 @@
 // Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin).
 //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2.
 
-function countOccurrences(obj: any, key: string): number {
-  let count = 0;
+// function countOccurrences(obj: any, key: string): number {
+//   let count = 0;
 
-  for (const k in obj) {
-    if (k === key) {
-      count++;
-    }
+//   for (const k in obj) {
+//     if (k === key) {
+//       count++;
+//     }
 
-    if (typeof obj[k] === "object" && obj[k] !== null) {
-      count += countOccurrences(obj[k], key);
-    }
-  }
+//     if (typeof obj[k] === "object" && obj[k] !== null) {
+//       count += countOccurrences(obj[k], key);
+//     }
+//   }
 
-  return count;
-}
+//   return count;
+// }
 
-const data = {
-  model: "Bugatti",
-  steer: {
-    model: "HANKOOK",
-    size: 30,
-  },
-};
+// const data = {
+//   model: "Bugatti",
+//   steer: {
+//     model: "HANKOOK",
+//     size: 30,
+//   },
+// };
 
-console.log(countOccurrences(data, "model"));
+// console.log(countOccurrences(data, "model"));
 
 // W-TASK
 //Shunday function yozing, uni array va number parametrlari bolsin.

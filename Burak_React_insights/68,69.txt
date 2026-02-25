@@ -1,0 +1,45 @@
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+____________________________________________________________________________________
+|     65 => member- signup , login jarayonlari va Token Authentication (NodeJS)                   |
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ * Darsimiz rejasi:
+ * Oddiy Userlarimizning Autehntication jarayonini Tokenlar orqali hosil qilamiz
+  * Burak oyihasini Authenticiation bo'yicha belgilab olingantrategiyalarini muhaokama etamiz
+  * Login va SignUp jarayonlarida JWTni hosil qilamiz
+  * Hosil qilayotgan Tookenlarimizni Cookielarni hida saqlaymiz
+  * User mberlarimizning credentiallarinitekshirib test qilamiz
+
+////////////////////////////////////////////////////////////////////////////
+
+Authenticiation jarayonini 3 xil uslubda tashkillashtirish mumkin :
+1. Sessions (Cookies)
+2. Tokens (Cookies)
+3. Tokens (Headers)
+
+/////////////////////////
+
+JWT (JSON Web Token) — bu foydalanuvchini tekshirish (authentication) va ma’lumotni xavfsiz uzatish uchun 
+ishlatiladigan token (matn ko‘rinishidagi maxsus kalit).
+
+/////////////////////////
+
+JWT token 3 ta qismdan iborat:
+HEADER.PAYLOAD.SIGNATURE
+
+1. Header (bosh qism)
+Token turi (JWT)
+Qaysi algoritm bilan imzolanganligi yoziladi
+Misol: { "alg": "HS256", "typ": "JWT" }
+
+2.Payload (ma’lumot qismi)
+Bu yerda foydalanuvchi haqida ma’lumot bo‘ladi:
+userId ,email , role
+Misol: { "userId": 1, "name": "Anvar" }
+
+3.Signature (imzo qismi)
+Bu xavfsizlik uchun:
+Token o‘zgartirilmaganini tekshiradi
+Secret key bilan yaratiladi
+
+/////////////////////////
