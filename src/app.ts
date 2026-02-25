@@ -7,7 +7,8 @@ import morgan from "morgan";
 //Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
 import { MORGAN_FORMAT } from "./libs/config";
 //express-session — bu Node.js kutubxonasi.
-//U server tomonda session yaratadi va boshqaradi.
+//U server tomonda session yaratadi va boshqaradi
+import cookieParser from "cookie-parser";
 import session from "express-session";
 import ConnectMongoDB from "connect-mongodb-session";
 import { T } from "./libs/types/common";
@@ -22,12 +23,12 @@ const store = new MongoDBStore({
 
 /** 1- ENTRANCE **/
 const app = express();
-// console.log("__dirname :", __dirname);
-app.use(express.static(path.join(__dirname, "public")));
+//app.use bu => middleware design pattern
+app.use(express.static(path.join(__dirname, "public"))); // Public ni ochiqlab beradi
 app.use(express.urlencoded({ extended: true })); //Traditional API support
 app.use(express.json()); //Rest API support
 app.use(morgan(MORGAN_FORMAT));
-//app.use bu => middleware design pattern
+app.use(cookieParser()); //cookie’larni o‘qib, ularni qulay ko‘rinishda req.cookies ichiga joylab beradi.
 
 /** 2- SESSIONS**/
 //Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
