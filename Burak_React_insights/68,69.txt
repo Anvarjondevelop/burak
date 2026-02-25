@@ -47,4 +47,9 @@ Secret key bilan yaratiladi
 cookie-parser — bu Node.js (Express) da ishlatiladigan middleware bo‘lib, 
 brauzerdan kelgan cookie’larni o‘qib, ularni qulay ko‘rinishda req.cookies ichiga joylab beradi.
 parse= bo‘lib chiqish
+
+/////////////////////////
+
+Credentiallar — bu foydalanuvchini tasdiqlash uchun ishlatiladigan maxfiy yoki identifikatsiya ma’lumotlari
+
 /////////////////////////
