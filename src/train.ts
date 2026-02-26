@@ -1,3 +1,21 @@
+// Y-TASK
+
+// Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin.
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3].
+function findIntersection(arr1: number[], arr2: number[]): number[] {
+  const set2 = new Set(arr2);
+  const result: number[] = [];
+
+  for (const item of arr1) {
+    if (set2.has(item) && !result.includes(item)) {
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 // X-TASK
 
 // Shunday function yozing, uni object va string parapetrlari bolsin.
