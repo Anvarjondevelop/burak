@@ -25,6 +25,7 @@ const store = new MongoDBStore({
 const app = express();
 //app.use bu => middleware design pattern
 app.use(express.static(path.join(__dirname, "public"))); // Public ni ochiqlab beradi
+app.use("/uploads", express.static("./uploads"));
 app.use(express.urlencoded({ extended: true })); //Traditional API support
 app.use(express.json()); //Rest API support
 app.use(morgan(MORGAN_FORMAT));
@@ -40,9 +41,9 @@ app.use(
   session({
     secret: String(process.env.SESSION_SECRET), // session id yo'q bo'lsa yaratadi bor bo'lsa tekshiradi //Session ID’ni soxtalashtirib bo‘lmasligi uchun muhr bosildi //2 Server cookie ichidagi session ID ni tekshiradi.
     cookie: {
-      maxAge: 1000 * 3600 * 3, //3h |  muhr qancha vaqt amal qiladi
+      maxAge: 1000 * 3600 * 3,
     },
-
+    resave: false,
     store: store, //Sessionlar RAM’da emas, MongoDB’da saqlansin | muhr ma’lumoti qayerda saqlanadi //2Sessionlar qayerda saqlanishini belgilaydi.
     rolling: true, // oxirgi login vaqtidan hisobga olsinsin | muhr har safar qayta bosiladimi?
     saveUninitialized: false, //hali ichida hech narsa bo‘lmagan sessionlarni ham bazaga saqlaydi. | bo‘sh muhr beriladimi?
@@ -71,7 +72,6 @@ app.set("view engine", "ejs");
 
 /** 4- ROUTERS**/
 app.use("/admin", routerAdmin); //SSR //EJS //Middleware Design Pattern //MPA => SSR
-
 app.use("/", router); //SPA:REACT // SPA => CSR
 
 export default app; // module.exports = app // default => 1 file da 1ta bo'ladi
