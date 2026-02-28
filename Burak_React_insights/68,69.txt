@@ -1,6 +1,6 @@
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ____________________________________________________________________________________
-|     65 => member- signup , login jarayonlari va Token Authentication (NodeJS)                   |
+|     68 => member- signup , login jarayonlari va Token Authentication (NodeJS)                   |
 ¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
  * Darsimiz rejasi:
@@ -53,3 +53,31 @@ parse= bo‘lib chiqish
 Credentiallar — bu foydalanuvchini tasdiqlash uchun ishlatiladigan maxfiy yoki identifikatsiya ma’lumotlari
 
 /////////////////////////
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+____________________________________________________________________________________
+|     71 => getTopUsers Rest API (Node js)                  |
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+ * Darsimiz rejasi:
+  * Mongoose Query commandlarini o'rganamiz
+  * getTopUsers mantiqini develop qilamiz
+
+
+////////////////////////////////////////////////////////////////////////////
+Static method — bu class (klass) ga tegishli bo‘lgan, lekin object (instance) yaratmasdan turib chaqiriladigan method hisoblanadi.
+
+Static method → classning o‘ziga tegishli funksiya
+Oddiy method → classdan yaratilgan objectga tegishli funksiya
+
+////////////////////////////////////////////////////////////////////////////
+
+Dasturlashda query — ma’lumot olish, izlash yoki filtr qilish uchun yuboriladigan so‘rov hisoblanadi.
+
+////////////////////////////////////////////////////////////////////////////
+
+findOneAndUpdate — bu Mongoose Model’ning static methodi bo‘lib, Query object qaytaradi va .exec() chaqirilganda haqiqiy database query bajariladi.
+
+////////////////////////////////////////////////////////////////////////
+
+REST API — bu client va server o‘rtasida HTTP orqali resurslarga CRUD operatsiyalarini bajarish uchun yaratilgan standart API arxitekturasi.
