@@ -81,3 +81,16 @@ findOneAndUpdate — bu Mongoose Model’ning static methodi bo‘lib, Query obj
 ////////////////////////////////////////////////////////////////////////
 
 REST API — bu client va server o‘rtasida HTTP orqali resurslarga CRUD operatsiyalarini bajarish uchun yaratilgan standart API arxitekturasi.
+
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+____________________________________________________________________________________
+|     72 => getRestaurant Rest API (Node js)                  |
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+ * Darsimiz rejasi:
+  * getRestaurant business mantiqini develop qilamiz
+  * Lean query commandasini tahlil qilamiz
+  
+////////////////////////////////////////////////////////////////////////
+lean() — query natijasini Mongoose Document o‘rniga oddiy JavaScript object qilib qaytaradi, bu esa performansni oshiradi va xotirani tejaydi.
