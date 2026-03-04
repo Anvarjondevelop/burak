@@ -94,3 +94,139 @@ ________________________________________________________________________________
   
 ////////////////////////////////////////////////////////////////////////
 lean() — query natijasini Mongoose Document o‘rniga oddiy JavaScript object qilib qaytaradi, bu esa performansni oshiradi va xotirani tejaydi.
+
+██████████████████████████████████████████████████████████████
+█   72 => getProducts Rest API (Node.js)                     █
+██████████████████████████████████████████████████████████████
+
+ * Darsimiz rejasi 
+  * MongoDB Aggregationni o'rganamiz
+  * URL da qatnashadigan query hamda params tushunchalari
+  * getProducts business mantiqini develop qilamiz
+____________________________________________________________________________________
+Aggregate - yig'moq, to'plamoq
+Pipeline - Bosqichma-bosqich jarayon
+Inquiry - so'rov
+query - so‘rov
+
+Aggregte - bir nechta collectionlarni bir vaqtni o'zida o'qish imkonini beradi
+
+Aggregate – bu MongoDB’da ma’lumotlarni qayta ishlash, guruhlash, hisoblash, filtrlash, birlashtirish uchun ishlatiladigan kuchli mexanizm.
+Aggregate qanday ishlaydi?
+Aggregate Pipeline orqali ishlaydi
+
+Pipeline — bu bosqichma-bosqich ishlaydigan jarayon
+Har bosqich $ bilan boshlanadi.
+____________________________________________________________________________________
+ENG KO‘P ISHLATILADIGAN AGGREGATE STAGE’LAR
+
+1| $match – (Filter qilish) => { $match: { price: { $gte: 100 } } }
+
+Qachon ishlatiladi?
+Active userlarni olish
+Sana bo‘yicha filter
+Status bo‘yicha ajratish
+____________________________________________________________________________________
+2| $group – (Guruhlash + Hisoblash) =>  {
+  $group: {
+    _id: "$userId",
+    totalSpent: { $sum: "$totalPrice" }
+  }
+}
+
+Qachon ishlatiladi?
+TOP user
+Eng ko‘p sotilgan mahsulot
+O‘rtacha baho
+____________________________________________________________________________________
+3| $sort – (Tartiblash) => { $sort: { totalSpent: -1 } }
+1 → o‘sish
+-1 → kamayish
+Qachon?
+TOP 10 chiqarishda
+Eng oxirgi orderlar
+____________________________________________________________________________________
+
+$limit – (Nechta olish) => { $limit: 5 }
+
+Qachon?
+TOP 5
+Oxirgi 10 ta
+____________________________________________________________________________________
+$project – (Keraksiz fieldlarni olib tashlash) => 
+{
+  $project: {
+    userId: 1,
+    totalSpent: 1,
+    _id: 0
+  }
+}
+
+Qachon?
+Frontendga toza data yuborishda
+Passwordni yashirishda
+____________________________________________________________________________________
+$lookup – (JOIN qilish)=>
+{
+  $lookup: {
+    from: "users",
+    localField: "userId",
+    foreignField: "_id",
+    as: "userData"
+  }
+}
+
+Qachon?
+Order ichiga user ma’lumotini qo‘shish
+Product ichiga category qo‘shish
+
+____________________________________________________________________________________
+REAL PROJECT :
+Eng ko‘p pul ishlagan TOP 3 user
+
+
+OrderModel.aggregate([
+  { $match: { status: "completed" } },
+  {
+    $group: {
+      _id: "$userId",
+      totalSpent: { $sum: "$totalPrice" }
+    }
+  },
+  { $sort: { totalSpent: -1 } },
+  { $limit: 3 }
+])
+____________________________________________________________________________________
+------------------------------------------------------------------------------------
+
+$in → bitta field ichida bir nechta qiymatdan birini tekshiradi
+
+{
+  department: { $in: ["sales", "engineering"] }
+}
+
+$or -> Turli fieldlar tekshirilsa, Murakkab shart bo‘lsa
+{
+  $or: [
+    { department: "sales" },
+    { age: { $gt: 30 } }
+  ]
+}
+
+____________________________________________________________________________________
+------------------------------------------------------------------------------------
+Params qachon ishlatiladi?
+Bitta aniq resursni olish
+ID orqali qidirish
+Dynamic route qilish
+
+Params — bu URL ichida keladigan
+👉 aniq bitta resursni ko‘rsatadigan qiymat
+
+__________________________________________________________________________________
+
+Query qachon ishlatiladi
+Filter qilish
+Qidirish
+Pagination
+Sort qilish

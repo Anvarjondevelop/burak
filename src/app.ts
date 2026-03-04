@@ -32,10 +32,10 @@ app.use(morgan(MORGAN_FORMAT));
 app.use(cookieParser()); //cookie’larni o‘qib, ularni qulay ko‘rinishda req.cookies ichiga joylab beradi.
 
 /** 2- SESSIONS**/
-//Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
+// Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
 
-//(1) req + session => requestimizga session ni boyitib beradi
-//(2) Cookie+SID => fronteddan kelayotgan cookiedagi SID(session id) ma'lumotni Dbdan tekshiradi
+// (1) req + session => requestimizga session ni boyitib beradi
+// (2) Cookie+SID => fronteddan kelayotgan cookiedagi SID(session id) ma'lumotni Dbdan tekshiradi
 
 app.use(
   session({
