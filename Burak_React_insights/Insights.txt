@@ -230,3 +230,23 @@ Filter qilish
 Qidirish
 Pagination
 Sort qilish
+
+getProducts code mantiqini tushunib olaylik!
+
+1️⃣ Frontenddan filter oladi
+2️⃣ Ularni tozalaydi (type convert)
+3️⃣ Service’ga beradi
+4️⃣ Database’dan mahsulotlarni oladi
+5️⃣ Frontendga qaytaradi
+
+
+██████████████████████████████████████████████████████████████
+█   73 => getProduct Rest API (Node.js)                      █
+██████████████████████████████████████████████████████████████
+
+* Darsimiz rejasi
+ * getProduct business mantiqini develop qilamiz
+ * Toshomaga bog'liq bo'lgan service hamda schema modellarni tashkil etamiz
+ * Tomosha qilish tizim integratsiyasini amalga oshiramiz
+
+ 
