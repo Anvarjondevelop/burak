@@ -3,7 +3,7 @@ import { ViewGroup } from "../libs/enums/view.enum";
 
 const viewSchema = new Schema(
   {
-    ViewGroup: {
+    viewGroup: {
       type: String,
       enum: ViewGroup,
       required: true,
@@ -23,4 +23,4 @@ const viewSchema = new Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("VIew", viewSchema);
+export default mongoose.model("View", viewSchema);
