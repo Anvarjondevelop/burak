@@ -241,7 +241,7 @@ getProducts code mantiqini tushunib olaylik!
 
 
 ██████████████████████████████████████████████████████████████
-█   73 => getProduct Rest API (Node.js)                      █
+█   74 => getProduct Rest API (Node.js)                      █
 ██████████████████████████████████████████████████████████████
 
 * Darsimiz rejasi
@@ -249,4 +249,14 @@ getProducts code mantiqini tushunib olaylik!
  * Toshomaga bog'liq bo'lgan service hamda schema modellarni tashkil etamiz
  * Tomosha qilish tizim integratsiyasini amalga oshiramiz
 
- 
+
+██████████████████████████████████████████████████████████████
+█   75 => createOrder Rest API (Node.js)                     █
+██████████████████████████████████████████████████████████████
+
+ * Darsimiz rejasi:
+  * Orderlarga daxldor bo'lgan Schema modellarini hosil etamiz
+  * Orderlarimiz uchun xizmat qiladigan Order Controller va Order Service Modellarini hosil etamiz
+  * createOrder business mantiqini develop qilamiz
+
+  
