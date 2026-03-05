@@ -14,7 +14,7 @@ export interface OrderItem {
 
 export interface Order {
   _id: ObjectId;
-  orderTtal: number;
+  orderTotal: number;
   orderDelivery: number;
   orderStatus: OrderStatus;
   memberId: ObjectId;
