@@ -1,21 +1,33 @@
+// ZB-TASK
+
+// Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar arasidan random raqam return qilsin.
+// MASALAN: randomBetween(30, 50) return 45.
+
+function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// misol
+console.log(randomBetween(30, 50));
+
 // Y-TASK
 
 // Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin.
 // MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3].
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  const set2 = new Set(arr2);
-  const result: number[] = [];
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   const set2 = new Set(arr2);
+//   const result: number[] = [];
 
-  for (const item of arr1) {
-    if (set2.has(item) && !result.includes(item)) {
-      result.push(item);
-    }
-  }
+//   for (const item of arr1) {
+//     if (set2.has(item) && !result.includes(item)) {
+//       result.push(item);
+//     }
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
 // X-TASK
 
 // Shunday function yozing, uni object va string parapetrlari bolsin.
