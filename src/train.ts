@@ -6,8 +6,8 @@
 function celsiusToFahrenheit(celsius: number): number {
   return (celsius * 9) / 5 + 32;
 }
-console.log(celsiusToFahrenheit(0)); // 32
-console.log(celsiusToFahrenheit(25)); // 77
+console.log(celsiusToFahrenheit(0));
+console.log(celsiusToFahrenheit(25));
 
 // ZB-TASK
 
