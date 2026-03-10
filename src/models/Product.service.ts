@@ -42,12 +42,10 @@ class ProductService {
       .aggregate([
         { $match: match },
         { $sort: sort },
-        { $skip: (inquiry.page * 1 - 1) * inquiry.limit },
-        { $limit: inquiry.limit * 1 },
+        { $skip: (inquiry.page - 1) * inquiry.limit },
+        { $limit: inquiry.limit },
       ])
       .exec();
-
-    if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     return result;
   }
@@ -58,13 +56,13 @@ class ProductService {
   ): Promise<Product> {
     const productId = shapeIntoMongooseObjectId(id);
 
-    // let result = await this.productModel
-    //   .findOne({
-    //     _id: productId,
-    //     productStatus: ProductStatus.PROCESS,
-    //   })
-    //   .exec();
-    let result = await this.productModel.findById(productId).exec();
+    let result = await this.productModel
+      .findOne({
+        _id: productId,
+        productStatus: ProductStatus.PROCESS,
+      })
+      .exec();
+    // let result = await this.productModel.findById(productId).exec();
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
 
     // TODO: If authenticated users => first => view log creation

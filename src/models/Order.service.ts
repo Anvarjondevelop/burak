@@ -42,7 +42,7 @@ class OrderService {
         memberId: memberId,
       });
       const orderId = newOrder._id;
-      console.log("OrderId:", orderId);
+      console.log("OrderId:", orderId); //! nimaga boshqa require lar yozilmayapdiß
 
       await this.recordOrderItem(orderId, input);
 

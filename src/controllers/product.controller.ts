@@ -5,6 +5,7 @@ import { Request, Response } from "express";
 import ProductService from "../models/Product.service";
 import { AdminRequest, ExtendedRequest } from "../libs/types/member";
 import { ProductInput, ProductInquiry } from "../libs/types/product";
+import { ProductCollection } from "../libs/enums/product.enum";
 
 const productService = new ProductService();
 
@@ -23,6 +24,8 @@ productController.getProducts = async (req: Request, res: Response) => {
     };
 
     if (search) inquiry.search = String(search);
+    if (productCollection)
+      inquiry.productCollection = productCollection as ProductCollection;
 
     const result = await productService.getProducts(inquiry);
 
@@ -42,7 +45,7 @@ productController.getProduct = async (req: ExtendedRequest, res: Response) => {
   try {
     console.log("getProduct");
     const { id } = req.params; // destructuring | req.params ichidan id degan property ni olib, id degan o‘zgaruvchiga saqla
-    const memberId = req.member._id ?? null;
+    const memberId = req.member?._id ?? null;
 
     const result = await productService.getProduct(memberId, id as string);
 
