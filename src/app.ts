@@ -1,8 +1,10 @@
+import cors from "cors";
 import express from "express";
 import path from "path";
 import router from "./router";
 import routerAdmin from "./router-admin";
 import morgan from "morgan";
+
 //Morgan — bu HTTP request logger middleware
 //Ya’ni Expressga kelayotgan har bir so‘rovni (request) konsolga yoki faylga log qilib yozib beradi.
 import { MORGAN_FORMAT } from "./libs/config";
@@ -30,6 +32,9 @@ app.use(express.urlencoded({ extended: true })); //Traditional API support
 app.use(express.json()); //Rest API support
 app.use(morgan(MORGAN_FORMAT));
 app.use(cookieParser()); //cookie’larni o‘qib, ularni qulay ko‘rinishda req.cookies ichiga joylab beradi.
+app.use(cors({ credentials: true, origin: true }));
+//credentials: true => cookie / session yuborishga ruxsat beradi
+//origin: true => kelgan origin ga avtomatik ruxsat beradi
 
 /** 2- SESSIONS**/
 // Sessionlarni express web serveriga integratsiyasini amalga oshiradigan joy
