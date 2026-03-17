@@ -1,13 +1,28 @@
+// ZF-TASK
+
+// Shunday function yozing, uni string parametri bolsin. String ichidagi har bir sozni bosh harflarini katta harf qilib qaytarsin lekin 1 yoki 2 harfdan iborat sozlarni esa oz holicha qoldirsin. MASALAN: capitalizeWords('name should be a string')
+// return 'Name Should be a String'.
+
+function capitalizeWords(text: string): string {
+  return text
+    .split(" ")
+    .map((word) => {
+      if (word.length <= 2) return word;
+      return word[0].toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+console.log(capitalizeWords("name should be a string"));
+
 // ZE-TASK
 
 // Shunday function yozing, uni string parametri bolsin.
 // String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin. MASALAN: removeDuplicate('stringg') return 'string'.
-function removeDuplicate(str: string): string {
-  return [...new Set(str)].join("");
-}
+// function removeDuplicate(str: string): string {
+//   return [...new Set(str)].join("");
+// }
 
-// test
-console.log(removeDuplicate("stringg")); // "string"
+// console.log(removeDuplicate("stringg"));
 // ZD-TASK
 // Shunday function yozing, uni number, array va number parametrlari bolsin va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin.
 // MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2].
