@@ -1,15 +1,35 @@
+// ZJ-TASK
+
+// Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
+// MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8.
+function reduceNestedArray(arr: any[]): number {
+  let sum = 0;
+
+  for (const item of arr) {
+    if (Array.isArray(item)) {
+      sum += reduceNestedArray(item);
+    } else {
+      sum += item;
+    }
+  }
+
+  return sum;
+}
+
+console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+
 // ZI-TASK
 
 // Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin
 //  "Hello World" ni qaytarsin. MASALAN: delayHelloWorld("Hello World") return "Hello World".
-const delayHelloWorld = async (text: string): Promise<string> => {
-  await new Promise((resolve) => setTimeout(resolve, 3000));
-  return text;
-};
-(async () => {
-  const result = await delayHelloWorld("Hello World");
-  console.log(result);
-})();
+// const delayHelloWorld = async (text: string): Promise<string> => {
+//   await new Promise((resolve) => setTimeout(resolve, 3000));
+//   return text;
+// };
+// (async () => {
+//   const result = await delayHelloWorld("Hello World");
+//   console.log(result);
+// })();
 
 // ZH-TASK
 
