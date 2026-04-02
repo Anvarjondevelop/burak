@@ -1,22 +1,38 @@
+// ZK-TASK
+// Shunday function yozing, u har soniyada bir marta consolega 1 dan 5 gacha bolgan raqamlarni chop etsin va 5 soniyadan keyin ishini toxtatsin. MASALAN: printNumbers().
+
+function delay(t: any) {
+  return new Promise((resolve) => setTimeout(resolve, t));
+}
+
+async function printNumbers() {
+  for (let i = 1; i <= 5; i++) {
+    await delay(1000);
+    console.log(i);
+  }
+}
+printNumbers();
+
 // ZJ-TASK
 
 // Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
 // MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8.
-function reduceNestedArray(arr: any[]): number {
-  let sum = 0;
 
-  for (const item of arr) {
-    if (Array.isArray(item)) {
-      sum += reduceNestedArray(item);
-    } else {
-      sum += item;
-    }
-  }
+// function reduceNestedArray(arr: any[]): number {
+//   let sum = 0;
 
-  return sum;
-}
+//   for (const item of arr) {
+//     if (Array.isArray(item)) {
+//       sum += reduceNestedArray(item);
+//     } else {
+//       sum += item;
+//     }
+//   }
 
-console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
+//   return sum;
+// }
+
+// console.log(reduceNestedArray([1, [1, 2, [4]]])); // 8
 
 // ZI-TASK
 
